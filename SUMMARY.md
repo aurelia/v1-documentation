@@ -7,3 +7,7 @@
 * [Quick Start](introduction-1/quick-start.md)
 * [Aurelia for new developers](introduction-1/aurelia-for-new-developers.md)
 * [Contact Manager tutorial](introduction-1/contact-manager-tutorial.md)
+
+## Getting to know Aurelia
+
+* [App configuration and startup](getting-to-know-aurelia/app-configuration-and-startup.md)
