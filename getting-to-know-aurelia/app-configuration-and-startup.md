@@ -4,6 +4,8 @@ description: How to get Aurelia started.
 
 # App configuration and startup
 
+## Bootstrapping Aurelia
+
 Aurelia offers flexibility in configuring your application's startup process. You can choose between two main approaches:
 
 1. Quick setup: Uses sensible defaults for a streamlined launch.
@@ -15,7 +17,7 @@ Aurelia, like most platforms, has an entry point for code execution. The Quick S
 
 As your project grows, you may need to configure the framework or run code before displaying content. To achieve this, assign a value to the aurelia-app attribute, pointing to a configuration module. This module should export a configure function that Aurelia calls, passing an Aurelia object for framework configuration and UI management.
 
-## Standard configuration
+### Standard configuration
 
 Here's an example configuration file demonstrating standard setup, equivalent to using `aurelia-app` without a value:
 
@@ -59,6 +61,8 @@ This approach gives you a solid starting point without any fuss.
 {% hint style="warning" %}
 Certain Aurelia modules rely on the Platform Abstraction Layer (PAL) being initialized, which typically occurs during `aurelia.start()`. If you need these modules in your configuration, you'll have to manually initialize the PAL beforehand. For step-by-step instructions on how to do this, check out [this GitHub issue](https://github.com/aurelia/pal-browser/issues/17) that details the process of initializing the PAL before bootstrapping.
 {% endhint %}
+
+### Verbose configuration
 
 The `use` property on the Aurelia instance provides access to a `FrameworkConfiguration` object. This object offers various methods for fine-tuning your Aurelia setup. For instance, if you prefer to manually configure standard plugins and logging instead of using helper methods like `standardConfiguration()`, you can do so directly through the `FrameworkConfiguration`instance.&#x20;
 
