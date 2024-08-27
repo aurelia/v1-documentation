@@ -14,6 +14,8 @@
 
 ## Templates
 
+* [Custom attributes](templates/custom-attributes.md)
+* [Value converters (pipes)](templates/value-converters-pipes.md)
 * [Template syntax](templates/template-syntax/README.md)
   * [Attribute binding](templates/template-syntax/attribute-binding.md)
   * [Event binding](templates/template-syntax/event-binding.md)
@@ -32,3 +34,10 @@
   * [The as-element (element aliasing)](templates/template-basics/the-as-element-element-aliasing.md)
   * [View Resource pipeline](templates/template-basics/view-resource-pipeline.md)
   * [View and Compilation Spies](templates/template-basics/view-and-compilation-spies.md)
+
+## Components
+
+* [Component basics](components/component-basics.md)
+* [Component lifecycles](components/component-lifecycles.md)
+* [Bindable properties](components/bindable-properties.md)
+* [Slotted content](components/slotted-content.md)
