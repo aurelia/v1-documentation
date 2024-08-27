@@ -1,4 +1,4 @@
-# Composition
+# Dynamic composition
 
 Embracing the DRY (Don't Repeat Yourself) Principle doesn't mean we should tightly couple our view and view-model pairs. Thankfully, Aurelia offers a solution: a custom element that dynamically combines an HTML template, a view-model, and optional initialization data. This flexible approach allows for more modular and reusable code, making your development process smoother and more efficient.
 
