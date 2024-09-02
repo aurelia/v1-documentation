@@ -320,6 +320,200 @@ Parts can be nested within other parts for more complex structures:
 </template>
 ```
 
+## Basic content projection
+
+So far, we've only talked about custom elements that look like `<custom-element attr.bind="vmProp"></custom-element>`. Now it's time to create custom elements with content inside them. Let's create a name tag custom element. When the `name-tag` element is used, it will take the name and display it as content in the element.
+
+```markup
+<name-tag>
+  Ralphie
+</name-tag>
+```
+
+Aurelia custom elements utilize the "slot based" content projection standard from the Web Component specifications. Let's look at how this will work with our `name-tag` element. This custom element utilizes a single slot, so we simply need to add a `<slot></slot>` element in our template where we would like content to be projected.
+
+{% code title="name-tag.html" %}
+```markup
+<template>
+  <div class="header">
+    Hello, my name is
+  </div>
+  <div class="name">
+    <slot></slot>
+  </div>
+</template>
+```
+{% endcode %}
+
+Aurelia will project the element's content in to the template where the `<slot></slot>` element is located.
+
+## Declarative computed values
+
+Aurelia provides a powerful and flexible way to handle computed values in your applications. As your custom elements grow more complex, you'll often need to work with values that are derived from other properties. This document explores the various methods to handle computed values in Aurelia, with a focus on the declarative `let` element.
+
+### Traditional Methods
+
+Before diving into the `let` element, let's review Aurelia's conventional methods for handling computed values.
+
+#### Simple Interpolation
+
+The most straightforward method is to use interpolation directly in the view:
+
+```html
+<div>
+  First name: <input value.bind="firstName">
+  Last name: <input value.bind="lastName">
+</div>
+Full name is: "${firstName} ${lastName}"
+```
+
+This approach works for simple cases but becomes unwieldy when you reuse the computed value or when the computation is more complex.
+
+#### View Model Computed Properties
+
+You can create computed properties in your view model for more control and reusability. Aurelia supports two main approaches:
+
+**1. Manual Computation**
+
+```javascript
+export class App {
+  @bindable firstName;
+  @bindable lastName;
+
+  firstNameChanged(newFirstName) {
+    this.fullName = `${newFirstName} ${this.lastName}`;
+  }
+
+  lastNameChanged(newLastName) {
+    this.fullName = `${this.firstName} ${newLastName}`;
+  }
+}
+```
+
+This method uses Aurelia's change callbacks to manually update the `fullName` property whenever `firstName` or `lastName` changes.
+
+**2. Getter with `@computedFrom` Decorator**
+
+```javascript
+export class App {
+  @bindable firstName;
+  @bindable lastName;
+
+  @computedFrom('firstName', 'lastName')
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+```
+
+The `@computedFrom` decorator tells Aurelia which properties to observe for changes, allowing for efficient updates of the computed property.
+
+### The `let` Element
+
+Aurelia introduces the `let` element as a more declarative and view-centric approach to computed values. This element simplifies creating and using computed values directly in your templates.
+
+#### Basic Usage
+
+The `let` element can be used with either interpolation or binding expressions:
+
+**Interpolation**
+
+```html
+<let full-name="${firstName} ${lastName}"></let>
+<div>
+  First name: <input value.bind="firstName">
+  Last name: <input value.bind="lastName">
+</div>
+Full name is: "${fullName}"
+```
+
+**Binding Expression**
+
+```html
+<let full-name.bind="firstName + ' ' + lastName"></let>
+<div>
+  First name: <input value.bind="firstName">
+  Last name: <input value.bind="lastName">
+</div>
+Full name is: "${fullName}"
+```
+
+In both cases, `fullName` is automatically recomputed whenever `firstName` or `lastName` changes without the need for explicit change handlers in the view model.
+
+#### Binding to View Model
+
+By default, the `let` element creates properties in the view's override context. If you need to access the computed value in your view model, use the `to-binding-context` attribute:
+
+```html
+<let to-binding-context full-name="${firstName} ${lastName}"></let>
+<div>
+  First name: <input value.bind="firstName">
+  Last name: <input value.bind="lastName">
+</div>
+Full name is: "${fullName}"
+```
+
+This approach allows you to react to changes in the computed value within your view model:
+
+```javascript
+export class App {
+  @bindable firstName;
+  @bindable lastName;
+
+  @observable fullName;
+
+  fullNameChanged(fullName) {
+    // React to changes in fullName
+    console.log('Full name updated:', fullName);
+  }
+}
+```
+
+### Advantages of the `let` Element
+
+1. **Declarative Syntax**: Keeps your templates clean and easy to understand.
+2. **Reduced View Model Complexity**: Minimizes the need for manual change handlers or computed properties in the view model.
+3. **Automatic Dependency Tracking**: Aurelia automatically tracks dependencies and updates the computed value when needed.
+4. **Flexibility**: Can be used for simple string concatenations or more complex computations.
+5. **Reusability**: Computed values can be easily reused throughout the template.
+
+### Best Practices
+
+1. Use `let` for view-specific computations that don't require complex logic.
+2. Prefer `to-binding-context` when you need to react to changes in the computed value from the view model.
+3. Consider using view model methods instead for complex computations or those used across multiple views.
+4. Be mindful of performance: while convenient, overuse of `let` elements could impact rendering performance in large templates.
+
+## Surrogate behaviors
+
+Surrogate behaviors allow you to add attributes, event handlers, and bindings on the template element for a custom element. This can be extremely useful in many cases, but one particular area that it is helpful is with dealing with `aria` attributes to help add accessibility to your custom elements. When using surrogate behaviors, you add attributes to the template element for your custom element. These attributes will be placed on the custom element itself at runtime. For example, consider the view for a `my-button` custom element:
+
+{% code title="my-button.html" %}
+```markup
+<template role="button">
+  <div>My Button</div>
+</template>
+```
+{% endcode %}
+
+```markup
+<template>
+  <require from="my-button"></require>
+
+  <my-button></my-button>
+</template>
+```
+
+The `role="button"` attribute will automatically be set on the `my-button` element whenever it used in an Aurelia application. If you were to check your browser's Dev Tools while running a template that used the `my-buttom` custom element, you will see something that looks like the below
+
+```markup
+<my-button class="au-target" au-target-id="1" role="button">
+  <div>My Button</div>
+</my-button>
+```
+
+It is important to note that Surrogate Behaviors cannot be used with a custom element that is using the `@containerless` decorator discussed below as this decorator removes the wrapping custom element from the DOM, and thus, there is nowhere for the Surrogate Behaviors to be placed.
+
 ## Advanced component example
 
 In modern web applications, it is common to interact with external data sources. Aurelia makes it easy to integrate API calls within your components. This example demonstrates how to fetch data from an external API using Aurelia's `HttpClient`. We'll create a component that retrieves and displays a list of users, showcasing Aurelia's ability to handle asynchronous operations and update the UI accordingly.
