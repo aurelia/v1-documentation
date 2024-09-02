@@ -12,10 +12,10 @@
 
 * [Component basics](components/component-basics.md)
 * [Component lifecycles](components/component-lifecycles.md)
+* [Component options](components/component-options.md)
 * [Bindable properties](components/bindable-properties.md)
 * [Slotted content](components/slotted-content.md)
-* [Template compilation](components/template-compilation/README.md)
-  * [processContent](components/template-compilation/processcontent.md)
+* [Template compilation using processContent](components/template-compilation-using-processcontent.md)
 
 ## Templates
 
