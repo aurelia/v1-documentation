@@ -207,22 +207,6 @@ export class StyleCustomAttribute { ... }
 
 To avoid conflicts, consider using a prefix or the `@customAttribute` decorator with a unique name.
 
-### Performance with Multiple Bindings
-
-When using multiple bindable properties, be aware that each binding creates an observer, which can impact performance if overused.
-
-```javascript
-@customAttribute('complex-attribute')
-export class ComplexAttributeCustomAttribute {
-  @bindable prop1;
-  @bindable prop2;
-  @bindable prop3;
-  // Too many bindables can affect performance
-}
-```
-
-Consider using a single object binding for complex configurations instead.
-
 ### Unexpected Behavior with One-time Bindings
 
 One-time bindings (`.one-time`) won't update the attribute if the bound value changes after initial binding.
@@ -286,27 +270,4 @@ export class ThirdPartyPluginAttribute {
     // Clean up third-party plugin
   }
 }
-```
-
-### Asynchronous Operations
-
-Be cautious with asynchronous operations in lifecycle hooks. The element might be detached before the operation is completed.
-
-```javascript
-attached() {
-  setTimeout(() => {
-    if (this.element.isAttached) {
-      // Safe to manipulate the element
-    }
-  }, 1000);
-}
-```
-
-### Limitations of Value Converters
-
-Custom attributes can't use value converters directly. If needed, apply converters in the view-model or use a computed property.
-
-```markup
-<!-- This won't work -->
-<div my-attribute="value | myConverter"></div>
 ```

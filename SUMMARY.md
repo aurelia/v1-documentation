@@ -12,6 +12,7 @@
 
 * [Component basics](components/component-basics.md)
 * [Component lifecycles](components/component-lifecycles.md)
+* [Styling components](components/styling-components.md)
 * [Component options](components/component-options.md)
 * [Bindable properties](components/bindable-properties.md)
 * [Slotted content](components/slotted-content.md)
