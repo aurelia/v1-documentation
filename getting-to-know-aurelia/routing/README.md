@@ -24,7 +24,7 @@ Navigate the Aurelia routing docs.
 
 [lifecycle-hooks.md](lifecycle-hooks.md "mention")
 
-[router-pipelines-hooks.md](router-pipelines-hooks.md "mention")
+[router-hooks.md](router-hooks.md "mention")
 
 [reusing-an-existing-view-model.md](reusing-an-existing-view-model.md "mention")
 
