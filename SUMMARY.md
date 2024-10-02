@@ -70,7 +70,21 @@
 * [Task queue](getting-to-know-aurelia/task-queue.md)
 * [Event aggregator](getting-to-know-aurelia/event-aggregator.md)
 * [Server side rendering](getting-to-know-aurelia/server-side-rendering.md)
-* [CLI](getting-to-know-aurelia/cli.md)
+* [CLI](getting-to-know-aurelia/cli/README.md)
+  * [Machine setup](getting-to-know-aurelia/cli/machine-setup.md)
+  * [Creating a new project](getting-to-know-aurelia/cli/creating-a-new-project.md)
+  * [Running your app](getting-to-know-aurelia/cli/running-your-app.md)
+  * [Environments](getting-to-know-aurelia/cli/environments.md)
+  * [Building your app](getting-to-know-aurelia/cli/building-your-app.md)
+  * [Generators](getting-to-know-aurelia/cli/generators.md)
+  * [Configuration with aurelia.json](getting-to-know-aurelia/cli/configuration-with-aurelia.json.md)
+  * [Webpack vs built-in bundler](getting-to-know-aurelia/cli/webpack-vs-built-in-bundler.md)
+  * [Gulp tasks](getting-to-know-aurelia/cli/gulp-tasks.md)
+  * [Webpack](getting-to-know-aurelia/cli/webpack.md)
+  * [Built-in bundler](getting-to-know-aurelia/cli/built-in-bundler.md)
+  * [Updating & migrating](getting-to-know-aurelia/cli/updating-and-migrating.md)
+  * [Recipes & known issues](getting-to-know-aurelia/cli/recipes-and-known-issues.md)
+  * [Getting help](getting-to-know-aurelia/cli/getting-help.md)
 
 ## Developer guides
 
