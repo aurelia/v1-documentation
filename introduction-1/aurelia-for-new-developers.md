@@ -97,7 +97,7 @@ Here's what's amazing. This is all the code for the app. But where is Aurelia? W
 
 Let's recap what we've covered so far. You might be surprised to learn that most of our work isn't Aurelia-specific. The bulk of our code is just plain vanilla Javascript/TypeScript.
 
-We've got our src/main.ts file, which serves as the entry point for our app. By convention, it typically uses src/app.ts as the root UI component. To dive deeper into this, check out our docs' App Configuration and Startup section.
+We've got our `src/main.ts` file, which serves as the entry point for our app. By convention, it typically uses `src/app.ts` as the root UI component. To dive deeper into this, check out our docs' App Configuration and Startup section.
 
 Now, let's talk about rendering. To bring our app component to life, we need to create a view for it. This is where we introduce another Aurelia convention. Creating a view for any class is straightforward: create an HTML file with the same name as your TypeScript module, but swap out the file extension for .html.
 
