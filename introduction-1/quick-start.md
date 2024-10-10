@@ -30,7 +30,7 @@ Always run commands from a Bash/Terminal prompt. Depending on your environment, 
 
 Ready to dive in? Great! Let's get started on our todo app.
 
-First, open your command line. We'll use the 'au new' command to kickstart our project.
+First, open your command line. We'll use the `au new` command to kickstart our project.
 
 When you run the command, a few options pop up. Here's what you need to do:
 
