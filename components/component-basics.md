@@ -20,7 +20,7 @@ export class Person {
 {% endcode %}
 
 {% code title="person.html" %}
-```markup
+```html
 <template>
   <label for="name">Enter Name:</label>
   <input id="name" type="text" value.bind="name">
@@ -49,7 +49,7 @@ export class NetWorth {
 }
 ```
 
-```markup
+```html
 <template>
   ${currentDate} <br>
   ${netWorth}
@@ -105,11 +105,11 @@ export class Hello {
 
 Aurelia's view-models are simple classes, showcasing one of its core strengths: the ability to use vanilla JavaScript for much of your application.
 
-Views in Aurelia use standard HTML templates, wrapped in Web Components' HTMLTemplateElement. The binding syntax is straightforward - just append .bind to any HTML attribute, and Aurelia will link it to the corresponding view-model property.
+Views in Aurelia use standard HTML templates, wrapped in Web Components' HTMLTemplateElement. The binding syntax is straightforward - just append `.bind` to any HTML attribute, and Aurelia will link it to the corresponding view-model property.
 
-By default, .bind uses one-way binding for most attributes, updating the view when the view-model changes. For form controls, it defaults to two-way binding, allowing data to flow both ways. You can be explicit about binding direction using .one-way, .two-way, or .one-time (useful for static data, improving performance).
+By default, `.bind` uses `one-way` binding for most attributes, updating the view when the view-model changes. For form controls, it defaults to `two-way` binding, allowing data to flow both ways. You can be explicit about binding direction using `.one-way`, `.two-way`, or `.one-time` (useful for static data, improving performance).
 
-Event binding is also supported. Use .trigger on any event, native or custom, to invoke an expression when the event fires.
+Event binding is also supported. Use `.trigger` on any event, native or custom, to invoke an expression when the event fires.
 
 This flexible, intuitive approach simplifies the development process while maintaining full control over your application's behavior.
 
@@ -138,7 +138,7 @@ export class Hello {
 Sometimes, you may only need a template without any associated logic. In such cases, you can create a component with just a view:
 
 {% code title="hello.html" %}
-```markup
+```html
 <!-- hello.html -->
 <template>
   <h1>Hello, World!</h1>
@@ -148,7 +148,7 @@ Sometimes, you may only need a template without any associated logic. In such ca
 
 To use this component:
 
-```markup
+```html
 <hello></hello>
 ```
 
@@ -189,7 +189,7 @@ export class MyCustomRect {
 }
 ```
 
-```markup
+```html
 <template>
   <svg>
     <rect width="10" height="10" fill="red" x="50" y="50"/>
@@ -199,7 +199,7 @@ export class MyCustomRect {
 
 To use it:
 
-```markup
+```html
 <template>
   <require from="my-custom-rect"></require>
 
@@ -240,7 +240,7 @@ export class SayHello {
 {% endcode %}
 
 {% code title="view-model.html" %}
-```markup
+```html
 <template>
   <require from="./say-hello"></require>
 
@@ -258,7 +258,7 @@ Template parts in Aurelia 1 are a powerful feature that allows you to define reu
 
 To define a template part, use the `<template part="name">` syntax:
 
-```markup
+```html
 <template>
   <template part="header">
     <h1>Welcome to My App</h1>
@@ -278,7 +278,7 @@ To define a template part, use the `<template part="name">` syntax:
 
 You can reference these parts in other templates using the `part` attribute:
 
-```markup
+```html
 <template>
   <compose view-model="./page-layout">
     <header replace-part="header">
@@ -292,7 +292,7 @@ You can reference these parts in other templates using the `part` attribute:
 
 Template parts can also be dynamic, allowing for conditional rendering:
 
-```markup
+```html
 <template part="user-info">
   <div if.bind="isLoggedIn">
     Welcome, ${username}!
@@ -307,7 +307,7 @@ Template parts can also be dynamic, allowing for conditional rendering:
 
 Parts can be nested within other parts for more complex structures:
 
-```markup
+```html
 <template part="sidebar">
   <nav>
     <template part="menu-items">
@@ -324,7 +324,7 @@ Parts can be nested within other parts for more complex structures:
 
 So far, we've only talked about custom elements that look like `<custom-element attr.bind="vmProp"></custom-element>`. Now it's time to create custom elements with content inside them. Let's create a name tag custom element. When the `name-tag` element is used, it will take the name and display it as content in the element.
 
-```markup
+```html
 <name-tag>
   Ralphie
 </name-tag>
@@ -333,7 +333,7 @@ So far, we've only talked about custom elements that look like `<custom-element 
 Aurelia custom elements utilize the "slot based" content projection standard from the Web Component specifications. Let's look at how this will work with our `name-tag` element. This custom element utilizes a single slot, so we simply need to add a `<slot></slot>` element in our template where we would like content to be projected.
 
 {% code title="name-tag.html" %}
-```markup
+```html
 <template>
   <div class="header">
     Hello, my name is
@@ -489,14 +489,14 @@ export class App {
 Surrogate behaviors allow you to add attributes, event handlers, and bindings on the template element for a custom element. This can be extremely useful in many cases, but one particular area that it is helpful is with dealing with `aria` attributes to help add accessibility to your custom elements. When using surrogate behaviors, you add attributes to the template element for your custom element. These attributes will be placed on the custom element itself at runtime. For example, consider the view for a `my-button` custom element:
 
 {% code title="my-button.html" %}
-```markup
+```html
 <template role="button">
   <div>My Button</div>
 </template>
 ```
 {% endcode %}
 
-```markup
+```html
 <template>
   <require from="my-button"></require>
 
@@ -506,7 +506,7 @@ Surrogate behaviors allow you to add attributes, event handlers, and bindings on
 
 The `role="button"` attribute will automatically be set on the `my-button` element whenever it used in an Aurelia application. If you were to check your browser's Dev Tools while running a template that used the `my-buttom` custom element, you will see something that looks like the below
 
-```markup
+```html
 <my-button class="au-target" au-target-id="1" role="button">
   <div>My Button</div>
 </my-button>
@@ -522,7 +522,8 @@ In modern web applications, it is common to interact with external data sources.
 
 Create an HTML file named `data-fetcher.html`.
 
-```markup
+{% code title="data-fetcher.html" %}
+```html
 <template>
   <h3>Data from API</h3>
   <button click.delegate="fetchData()">Fetch Data</button>
@@ -536,6 +537,7 @@ Create an HTML file named `data-fetcher.html`.
 
 Create a JavaScript file named `data-fetcher.js`.
 
+{% code title="data-fetcher.js" %}
 ```javascript
 import { HttpClient } from 'aurelia-fetch-client';
 
@@ -561,7 +563,7 @@ export class DataFetcher {
 
 Include the component in your main HTML file (such as `app.html`).
 
-```markup
+```html
 <template>
   <require from="./data-fetcher"></require>
 
