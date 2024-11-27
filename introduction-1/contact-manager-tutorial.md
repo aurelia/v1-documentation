@@ -5,7 +5,7 @@ description: >-
   work.
 ---
 
-# Contact Manager tutorial
+# Contact manager tutorial
 
 Ready to dive deeper? Let's build a contact manager app to showcase Aurelia's power and versatility. This tutorial will take you beyond the basics, introducing key features and practical techniques you'll use in real-world projects. We'll also get you comfortable with the CLI, setting you up for more complex development work.
 
@@ -18,7 +18,7 @@ Before diving into Aurelia, you'll need to set up your development environment. 
 
 If you've already installed the Aurelia CLI, feel free to skip ahead to the next section.
 
-For detailed installation instructions, check out our [Quick Start](quick-start.md) guide.
+For detailed installation instructions, check out our [Quick Start](broken-reference) guide.
 
 ## Creating a new Aurelia project
 
@@ -57,7 +57,7 @@ Copy all of these files to your project `src` folder. TypeScript users should al
 ## Building the application shell
 
 {% hint style="warning" %}
-Before proceeding, please ensure you are familiar with the concepts introduced in [Aurelia for new developers](aurelia-for-new-developers.md) or have some basic experience with Aurelia.
+Before proceeding, please ensure you are familiar with the concepts introduced in [Aurelia for new developers](broken-reference) or have some basic experience with Aurelia.
 {% endhint %}
 
 Let's start by looking at a picture of the final product of this tutorial. It will help us to see the application's structure and the pieces we need to build.

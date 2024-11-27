@@ -6,7 +6,7 @@
 
 * [Quick Start](introduction-1/quick-start.md)
 * [Aurelia for new developers](introduction-1/aurelia-for-new-developers.md)
-* [Contact Manager tutorial](introduction-1/contact-manager-tutorial.md)
+* [Contact manager tutorial](introduction-1/contact-manager-tutorial.md)
 
 ## Components
 
@@ -95,10 +95,25 @@
 ## Developer guides
 
 * [Animation](developer-guides/animation.md)
-* [Testing](developer-guides/testing.md)
+* [Testing](developer-guides/testing/README.md)
+  * [Unit Testing](developer-guides/testing/unit-testing/README.md)
+    * [Testing Custom Elements](developer-guides/testing/unit-testing/testing-custom-elements.md)
+    * [Testing Custom Attributes](developer-guides/testing/unit-testing/testing-custom-attributes.md)
+    * [Testing Routing and Navigation](developer-guides/testing/unit-testing/testing-routing-and-navigation.md)
+    * [Advanced Testing](developer-guides/testing/unit-testing/advanced-testing.md)
+    * [Helpful Properties, Functions, and Advanced Querying](developer-guides/testing/unit-testing/helpful-properties-functions-and-advanced-querying.md)
+    * [Dependency Injection Testing](developer-guides/testing/unit-testing/dependency-injection-testing.md)
+    * [Testing Custom Value Converters and Binding Behaviors](developer-guides/testing/unit-testing/testing-custom-value-converters-and-binding-behaviors.md)
+    * [Internationalization (i18n) Testing](developer-guides/testing/unit-testing/internationalization-i18n-testing.md)
+  * [End-to-end testing](developer-guides/testing/end-to-end-testing/README.md)
+    * [Getting started with Playwright](developer-guides/testing/end-to-end-testing/getting-started-with-playwright.md)
+    * [Writing E2E tests](developer-guides/testing/end-to-end-testing/writing-e2e-tests.md)
+    * [Advanced Techniques](developer-guides/testing/end-to-end-testing/advanced-techniques.md)
 * [Logging](developer-guides/logging.md)
-* [Web components](developer-guides/web-components.md)
-* [Building plugins](developer-guides/building-plugins.md)
+* [Building plugins](developer-guides/building-plugins/README.md)
+  * [Plugin Development](developer-guides/building-plugins/plugin-development.md)
+  * [Building and Publishing](developer-guides/building-plugins/building-and-publishing.md)
+  * [Advanced Plugin Techniques](developer-guides/building-plugins/advanced-plugin-techniques.md)
 * [UI Virtualization](developer-guides/ui-virtualization.md)
 * [Integrations](developer-guides/integrations.md)
 * [Cheat sheet](developer-guides/cheat-sheet.md)
