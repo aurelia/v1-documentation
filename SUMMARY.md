@@ -122,6 +122,7 @@
 
 * [Validation](aurelia-packages/validation.md)
 * [i18n Internationalization](aurelia-packages/i18n-internationalization.md)
+* [Dialogs](aurelia-packages/dialogs.md)
 * [Fetch client](aurelia-packages/fetch-client.md)
 * [HTTP client](aurelia-packages/http-client.md)
 * [Store](aurelia-packages/store.md)
