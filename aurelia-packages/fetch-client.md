@@ -33,6 +33,22 @@ import { HttpClient } from 'aurelia-fetch-client';
 const http = new HttpClient();
 ```
 
+You can inject a new instance into your component or service class by injecting the Fetch client into your components and services. This will ensure our component gets a new instance of the Fetch client.
+
+```javascript
+import { inject } from 'aurelia-framework';
+import { HttpClient } from 'aurelia-fetch-client';
+
+@inject(HttpClient)
+export class MyService {
+    constructor(http) {
+        this.http = http;
+    }
+}
+```
+
+This pattern is preferable when encapsulating logic for interacting with an API or backend and wanting to share the same interceptors, base URL and other configuration aspects.
+
 #### Making HTTP Requests
 
 The `fetch` method is the primary way to make HTTP requests. It accepts the same parameters as the native `fetch` API:

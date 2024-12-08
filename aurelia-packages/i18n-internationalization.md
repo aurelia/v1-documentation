@@ -555,8 +555,6 @@ instance.setup({
 
 ### **Common Issues and Solutions**
 
-> warning: Common Pitfalls
-
 * **Issue**: Translations not updating when locale changes
   * Solution: Ensure you're using the binding behavior (`&t`) instead of value converter (`|t`)
 * **Issue**: HTML content displayed as escaped text
@@ -583,7 +581,7 @@ instance.setup({
 
 ### Aurelia CLI Configuration
 
-The latest versions of Aurelia CLI include built-in support for loading locale files. No additional configuration is required if you're using the standard CLI setup.
+The latest versions of Aurelia CLI include built-in support for loading locale files. If you're using the standard CLI setup, no additional configuration is required.
 
 ### Webpack Configuration
 
@@ -664,7 +662,7 @@ module.exports = {
   * Returns a promise that resolves when initialization is complete
 * `setLocale(locale: string): Promise<any>`
   * Changes the active locale
-  * Returns a promise that resolves when locale is changed
+  * Returns a promise that resolves when the locale is changed
 * `getLocale(): string`
   * Returns the current active locale
 * `tr(key: string, options?: any): string`
