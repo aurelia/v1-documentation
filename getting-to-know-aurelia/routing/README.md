@@ -29,3 +29,7 @@ Navigate the Aurelia routing docs.
 [reusing-an-existing-view-model.md](reusing-an-existing-view-model.md "mention")
 
 [router-events.md](router-events.md "mention")
+
+[child-routers.md](child-routers.md "mention")
+
+[handling-links.md](handling-links.md "mention")
