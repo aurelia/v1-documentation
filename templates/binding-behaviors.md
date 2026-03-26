@@ -6,8 +6,6 @@ The key distinction is that binding behaviors have full access to the binding in
 
 This expanded access allows binding behaviors to modify the binding's behavior, opening up a range of powerful possibilities. Let's explore some of these scenarios below.
 
-I apologize for the lack of detail. You're right, more comprehensive information is needed. Let me provide a more thorough explanation of binding behaviors in Aurelia.
-
 ## Built-in Binding Behaviors
 
 Aurelia provides several built-in binding behaviors that address common scenarios. Let's explore each in detail:
