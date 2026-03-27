@@ -11,7 +11,7 @@ Aurelia supports slotted content through a feature known as `content projection`
 
 ## Defining Slots in Components
 
-To define a slot within an Aurelia component, use the `<slot>` element in your component's template file. Here’s how you can create a basic slotted component:
+To define a slot within an Aurelia component, use the `<slot>` element in your component's template file. Here's how you can create a basic slotted component:
 
 ### Example
 

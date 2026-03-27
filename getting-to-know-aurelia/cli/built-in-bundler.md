@@ -2,7 +2,7 @@
 
 The Aurelia CLI's built-in bundler offers an alternative to Webpack, supporting bundling with RequireJS or SystemJS.
 
-## CLI’s Built-in Bundler
+## CLI's Built-in Bundler
 
 The CLI's built-in bundler is designed to simplify the bundling process by automatically handling module dependencies and optimizing the production application. It supports both RequireJS and SystemJS module loaders, allowing developers to choose based on their project requirements.
 
@@ -312,7 +312,7 @@ import 'tempusdominus-bootstrap-4';
 Use the `wrapShim` option to delay the execution of legacy scripts until all dependencies are loaded.
 {% endhint %}
 
-## CLI’s Built-in Bundler Cookbook
+## CLI's Built-in Bundler Cookbook
 
 The following recipes demonstrate common integration scenarios with the CLI's built-in bundler, including popular libraries and handling specific requirements.
 

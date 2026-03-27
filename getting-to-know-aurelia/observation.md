@@ -1,8 +1,8 @@
 # Observation
 
-Aurelia’s observation system is a core feature that enables seamless data binding between your application’s model and view. This document provides a comprehensive guide to Aurelia's observation mechanisms, including the Observer Locator, the @observable decorator, and other strategies for observing changes in your application state.
+Aurelia's observation system is a core feature that enables seamless data binding between your application's model and view. This document provides a comprehensive guide to Aurelia's observation mechanisms, including the Observer Locator, the @observable decorator, and other strategies for observing changes in your application state.
 
-Aurelia’s observation system is designed to efficiently detect changes in your application’s data models and automatically update the views. This two-way data binding ensures the user interface remains in sync with the underlying data without manual intervention.
+Aurelia's observation system is designed to efficiently detect changes in your application's data models and automatically update the views. This two-way data binding ensures the user interface remains in sync with the underlying data without manual intervention.
 
 Key features of the observation system include:
 
@@ -28,7 +28,7 @@ It acts as a central hub that other parts of the Aurelia framework use to subscr
 
 ### Using the observer locator
 
-While Aurelia’s binding system typically handles observation automatically, you can use the Observer Locator directly when you need fine-grained control.
+While Aurelia's binding system typically handles observation automatically, you can use the Observer Locator directly when you need fine-grained control.
 
 ### Injecting the Observer Locator
 
@@ -65,7 +65,7 @@ arrayObserver.subscribe(splices => {
 ```
 
 {% hint style="info" %}
-Use direct observation sparingly. Rely on Aurelia’s binding system to keep your code clean and maintainable for most scenarios.
+Use direct observation sparingly. Rely on Aurelia's binding system to keep your code clean and maintainable for most scenarios.
 {% endhint %}
 
 ## The @observable Decorator
@@ -76,7 +76,7 @@ The @observable decorator provides a convenient way to make class properties obs
 
 When you apply the @observable decorator to a property, Aurelia:
 
-• Generates a property with a getter and setter that notifies Aurelia’s binding system upon changes.
+• Generates a property with a getter and setter that notifies Aurelia's binding system upon changes.
 
 • Creates a corresponding change handler method if you follow the naming convention (propertyNameChanged).
 
@@ -151,7 +151,7 @@ export class Counter {
 
 • The view displays the current value of count and provides buttons to modify it.
 
-• The UI updates automatically when count changes, thanks to Aurelia’s data binding.
+• The UI updates automatically when count changes, thanks to Aurelia's data binding.
 
 ## Collection Observation
 

@@ -17,6 +17,7 @@
 * [Bindable properties](components/bindable-properties.md)
 * [Slotted content](components/slotted-content.md)
 * [Template compilation using processContent](components/template-compilation-using-processcontent.md)
+* [Component decorators](components/component-decorators.md)
 
 ## Templates
 
@@ -32,6 +33,7 @@
   * [Contextual properties](templates/template-syntax/contextual-properties.md)
   * [Expression syntax](templates/template-syntax/expression-syntax.md)
   * [Computed properties](templates/template-syntax/computed-properties.md)
+  * [Let element](templates/template-syntax/let-element.md)
   * [Binding engine internals](templates/template-syntax/binding-engine-internals.md)
 * [Custom attributes](templates/custom-attributes.md)
 * [Value converters (pipes)](templates/value-converters-pipes.md)
@@ -44,6 +46,7 @@
 * [The as-element (element aliasing)](templates/the-as-element-element-aliasing.md)
 * [View Resource pipeline](templates/view-resource-pipeline.md)
 * [View and Compilation Spies](templates/view-and-compilation-spies.md)
+* [HTML behaviors](templates/html-behaviors.md)
 
 ## Getting to know Aurelia
 
@@ -63,6 +66,8 @@
   * [Router pipelines (hooks)](getting-to-know-aurelia/routing/router-hooks.md)
   * [Reusing an Existing View Model](getting-to-know-aurelia/routing/reusing-an-existing-view-model.md)
   * [Router events](getting-to-know-aurelia/routing/router-events.md)
+  * [Child routers](getting-to-know-aurelia/routing/child-routers.md)
+  * [Handling links](getting-to-know-aurelia/routing/handling-links.md)
 * [Enhance](getting-to-know-aurelia/enhance.md)
 * [Dynamic composition](getting-to-know-aurelia/dynamic-composition.md)
 * [Observation](getting-to-know-aurelia/observation.md)
